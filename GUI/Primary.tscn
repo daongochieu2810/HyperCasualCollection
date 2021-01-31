@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://EmeraldCounter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BombCounter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EnergyBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LifeBar.tscn" type="PackedScene" id=4]
+
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopContainer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 117.0
+
+[node name="Bars" type="VBoxContainer" parent="TopContainer"]
+margin_right = 776.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+
+[node name="LifeBar" parent="TopContainer/Bars" instance=ExtResource( 4 )]
+margin_right = 776.0
+
+[node name="EnergyBar" parent="TopContainer/Bars" instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_top = 57.0
+margin_right = 776.0
+margin_bottom = 97.0
+
+[node name="Counters" type="HBoxContainer" parent="TopContainer"]
+margin_left = 780.0
+margin_top = 18.0
+margin_right = 984.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_vertical = 4
+
+[node name="BombCounter" parent="TopContainer/Counters" instance=ExtResource( 2 )]
+margin_bottom = 60.0
+
+[node name="EmeraldCounter" parent="TopContainer/Counters" instance=ExtResource( 1 )]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 60.0
